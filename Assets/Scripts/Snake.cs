@@ -8,6 +8,8 @@ public class Snake : MonoBehaviour {
     private float moveTimer = 0f;
     private bool canTurn = true;
 
+    public bool lose = false;
+
     public int score;
 
     bool ate = false;
@@ -52,6 +54,7 @@ public class Snake : MonoBehaviour {
       } if ((collision.tag == "wall") || (collision.tag == "body")) {
         //wall or snake, go to game end screen
         Debug.Log("Lose");
+        lose = true;
       }
     }
 

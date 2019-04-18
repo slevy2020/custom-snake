@@ -5,6 +5,8 @@ using System.Linq;
 
 public class Snake : MonoBehaviour {
     Vector2 currentDir = Vector2.right;
+    private float moveTimer = 0f;
+    private bool canTurn = true;
 
     public int score;
 
@@ -19,14 +21,26 @@ public class Snake : MonoBehaviour {
     }
 
     void Update() {
-      if (Input.GetKeyDown("w") && (currentDir != Vector2.up) && (currentDir != Vector2.down)) {
+      if (Input.GetKeyDown("w") && (currentDir != Vector2.up) && (currentDir != Vector2.down) && (canTurn)) {
         currentDir = Vector2.up;
-      } else if (Input.GetKeyDown("s") && (currentDir != Vector2.up) && (currentDir != Vector2.down)) {
+        canTurn = false;
+      } else if (Input.GetKeyDown("s") && (currentDir != Vector2.up) && (currentDir != Vector2.down) && (canTurn)) {
         currentDir = -Vector2.up;
-      } else if (Input.GetKeyDown("d") && (currentDir != Vector2.right) && (currentDir != Vector2.left)) {
+        canTurn = false;
+      } else if (Input.GetKeyDown("d") && (currentDir != Vector2.right) && (currentDir != Vector2.left) && (canTurn)) {
         currentDir = Vector2.right;
-      } else if (Input.GetKeyDown("a") && (currentDir != Vector2.right) && (currentDir != Vector2.left)) {
+        canTurn = false;
+      } else if (Input.GetKeyDown("a") && (currentDir != Vector2.right) && (currentDir != Vector2.left) && (canTurn)) {
         currentDir = -Vector2.right;
+        canTurn = false;
+      }
+
+      if (!canTurn) {
+        moveTimer += Time.deltaTime;
+      }
+      if (moveTimer > .1) {
+        canTurn = true;
+        moveTimer = 0f;
       }
     }
 

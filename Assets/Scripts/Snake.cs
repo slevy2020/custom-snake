@@ -16,13 +16,13 @@ public class Snake : MonoBehaviour {
     }
 
     void Update() {
-      if (Input.GetKeyDown("w")) {
+      if (Input.GetKeyDown("w") && (currentDir != Vector2.up) && (currentDir != Vector2.down)) {
         currentDir = Vector2.up;
-      } else if (Input.GetKeyDown("s")) {
+      } else if (Input.GetKeyDown("s") && (currentDir != Vector2.up) && (currentDir != Vector2.down)) {
         currentDir = -Vector2.up;
-      } else if (Input.GetKeyDown("d")) {
+      } else if (Input.GetKeyDown("d") && (currentDir != Vector2.right) && (currentDir != Vector2.left)) {
         currentDir = Vector2.right;
-      } else if (Input.GetKeyDown("a")) {
+      } else if (Input.GetKeyDown("a") && (currentDir != Vector2.right) && (currentDir != Vector2.left)) {
         currentDir = -Vector2.right;
       }
     }

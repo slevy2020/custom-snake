@@ -31,8 +31,9 @@ public class Snake : MonoBehaviour {
       if (collision.tag == "food") {
         ate = true;
         Destroy(collision.gameObject);
-      } else {
+      } if ((collision.tag == "wall") || (collision.tag == "body")) {
         //wall or snake, go to game end screen
+        Debug.Log("Lose");
       }
     }
 
@@ -44,12 +45,19 @@ public class Snake : MonoBehaviour {
         for (int i=0; i<2; i++) {
           GameObject tailObj = Instantiate(tailPrefab, gapPos, Quaternion.identity);
           tail.Insert(0, tailObj.transform);
+          //prevent collision with first piece of the tail
         }
+        tail.ElementAt(1).tag = "body";
+
         ate = false;
       }
       else if (tail.Count > 0) {
         tail.Last().position = gapPos;
         tail.Insert(0, tail.Last());
+        //prevent collision with first piece of the tail
+        tail.First().tag = "Untagged";
+        tail.ElementAt(1).tag = "body";
+
         tail.RemoveAt(tail.Count-1);
       }
     }

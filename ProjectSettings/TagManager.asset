@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - food
+  - wall
+  - body
   layers:
   - Default
   - TransparentFX

@@ -6,6 +6,8 @@ using System.Linq;
 public class Snake : MonoBehaviour {
     Vector2 currentDir = Vector2.right;
 
+    public int score;
+
     bool ate = false;
     public GameObject tailPrefab;
 
@@ -13,6 +15,7 @@ public class Snake : MonoBehaviour {
 
     void Start() {
       InvokeRepeating("Move", 0.3f, 0.05f);
+      score = 0;
     }
 
     void Update() {
@@ -30,6 +33,7 @@ public class Snake : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision) {
       if (collision.tag == "food") {
         ate = true;
+        score += 1;
         Destroy(collision.gameObject);
       } if ((collision.tag == "wall") || (collision.tag == "body")) {
         //wall or snake, go to game end screen
@@ -47,7 +51,6 @@ public class Snake : MonoBehaviour {
           tail.Insert(0, tailObj.transform);
           //prevent collision with first piece of the tail
         }
-        tail.ElementAt(1).tag = "body";
 
         ate = false;
       }

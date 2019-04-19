@@ -20,27 +20,33 @@ public class PersistentData : MonoBehaviour {
   }
 
   void Update() {
-    if (scriptControl) {
-      if (snake.lose) {
-        GameOver();
-      }
-    }
+    // if (scriptControl) {
+    //   if (snake.lose) {
+    //     GameOver();
+    //   }
+    // }
 
     if ((SceneManager.GetActiveScene().name == "Level") && (!scriptControl)) {
       GetControl();
     }
   }
 
-  void GameOver() {
-    GetScore();
-    SceneManager.LoadScene("End");
-    Text scoreText = GameObject.Find("End UI Score").GetComponent<Text>();
-    scoreText.text = "Score: " + prevScore;
+  public void GameOver() {
     snake.lose = false;
+    UpdateScore();
+    Debug.Log("PrevScore " + prevScore);
+    SceneManager.LoadScene("End");
+    scriptControl = false;
+  }
+
+  void UpdateScore() {
+    GetScore();
+    prevScore = GetScore();
+    money += prevScore;
   }
 
   void GetScore() {
-    prevScore = snake.score;
+    //return the value of the score from the snake script
   }
 
   void GetControl() {

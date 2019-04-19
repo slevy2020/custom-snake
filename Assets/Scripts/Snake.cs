@@ -8,18 +8,21 @@ public class Snake : MonoBehaviour {
     private float moveTimer = 0f;
     private bool canTurn = true;
 
-    public bool lose = false;
-
+    public bool lose;
     public int score;
 
     bool ate = false;
     public GameObject tailPrefab;
+
+    private PersistentData persistentScript;
 
     List<Transform> tail = new List<Transform>();
 
     void Start() {
       InvokeRepeating("Move", 0.3f, 0.05f);
       score = 0;
+      lose = false;
+      persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
     }
 
     void Update() {
@@ -50,11 +53,12 @@ public class Snake : MonoBehaviour {
       if (collision.tag == "food") {
         ate = true;
         score += 1;
+        Debug.Log("Score: " + score);
         Destroy(collision.gameObject);
       } if ((collision.tag == "wall") || (collision.tag == "body")) {
         //wall or snake, go to game end screen
-        Debug.Log("Lose");
         lose = true;
+        persistentScript.GameOver();
       }
     }
 

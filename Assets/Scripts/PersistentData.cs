@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class PersistentData : MonoBehaviour {
 
-  public int prevScore;
+  public int score;
   public int money;
 
   private Snake snake;
@@ -20,33 +20,22 @@ public class PersistentData : MonoBehaviour {
   }
 
   void Update() {
-    // if (scriptControl) {
-    //   if (snake.lose) {
-    //     GameOver();
-    //   }
-    // }
-
     if ((SceneManager.GetActiveScene().name == "Level") && (!scriptControl)) {
       GetControl();
     }
   }
 
   public void GameOver() {
-    snake.lose = false;
-    UpdateScore();
-    Debug.Log("PrevScore " + prevScore);
+    money += score;
+    Debug.Log("Score: " + score);
+    Debug.Log("Money: " + money);
+  //  snake.lose = false;
     SceneManager.LoadScene("End");
     scriptControl = false;
   }
 
-  void UpdateScore() {
-    GetScore();
-    prevScore = GetScore();
-    money += prevScore;
-  }
-
-  void GetScore() {
-    //return the value of the score from the snake script
+  public void FoodCollected() {
+    score += 1;
   }
 
   void GetControl() {

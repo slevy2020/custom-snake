@@ -9,7 +9,7 @@ public class Snake : MonoBehaviour {
     private bool canTurn = true;
 
     public bool lose;
-    public int score;
+//    public int score;
 
     bool ate = false;
     public GameObject tailPrefab;
@@ -20,9 +20,9 @@ public class Snake : MonoBehaviour {
 
     void Start() {
       InvokeRepeating("Move", 0.3f, 0.05f);
-      score = 0;
       lose = false;
       persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
+      persistentScript.score = 0;
     }
 
     void Update() {
@@ -52,10 +52,9 @@ public class Snake : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision) {
       if (collision.tag == "food") {
         ate = true;
-        score += 1;
-        Debug.Log("Score: " + score);
+        persistentScript.FoodCollected();
         Destroy(collision.gameObject);
-      } if ((collision.tag == "wall") || (collision.tag == "body")) {
+      } if (((collision.tag == "wall") || (collision.tag == "body")) && (!lose)) {
         //wall or snake, go to game end screen
         lose = true;
         persistentScript.GameOver();
@@ -85,4 +84,9 @@ public class Snake : MonoBehaviour {
         tail.RemoveAt(tail.Count-1);
       }
     }
+
+    // public void GetScore(int val) {
+    //   val = score;
+    //   Debug.Log("Val: " + val);
+    // }
 }

@@ -10,6 +10,9 @@ public class ScoreDisplay : MonoBehaviour {
 
   void Start() {
     persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
-    scoreDisplayText.text = "Score: " + persistentScript.prevScore;
+  }
+
+  void Update() {
+    scoreDisplayText.text = "Score: " + persistentScript.score;
   }
 }

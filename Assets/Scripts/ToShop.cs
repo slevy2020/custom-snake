@@ -1,18 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
-public class ToShop : MonoBehaviour
-{
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+public class ToShop : MonoBehaviour {
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+  void Start() {
+    Button start = GetComponent<Button>();
+    start.onClick.AddListener(GoToShop);
+  }
+
+  void GoToShop() {
+    SceneManager.LoadScene("Shop");
+  }
 }

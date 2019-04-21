@@ -426,7 +426,7 @@ GameObject:
   - component: {fileID: 905817269}
   - component: {fileID: 905817268}
   m_Layer: 5
-  m_Name: Play Button
+  m_Name: To Shop Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -460,7 +460,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 905817266}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2214758356d1e48e899bdcd1d1beca81, type: 3}
+  m_Script: {fileID: 11500000, guid: d616af192c8c7468aafa1c481130bf5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &905817269
@@ -536,7 +536,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 2406a5eaeff0842cc9667f832416f957, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1fb3a45975e31499092637521b687b2b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

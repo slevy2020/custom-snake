@@ -13,6 +13,7 @@ public class Snake : MonoBehaviour {
 
     bool ate = false;
     public GameObject tailPrefab;
+    public Color snakeSkin;
 
     private PersistentData persistentScript;
 

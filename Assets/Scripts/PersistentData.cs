@@ -12,6 +12,10 @@ public class PersistentData : MonoBehaviour {
   private Snake snake;
   private SpawnFood spawnFood;
 
+  public Color snakeColor;
+
+  private bool canBuy;
+
   private bool scriptControl = false;
 
   void Start() {
@@ -36,6 +40,22 @@ public class PersistentData : MonoBehaviour {
 
   public void FoodCollected() {
     score += 1;
+  }
+
+  public void PriceCheck(int cost, string item) {
+    canBuy = false;
+    if (cost <= money) {
+      money -= cost;
+      canBuy = true;
+    }
+    if (canBuy) {
+      switch (item) {
+        case "green skin":
+          snakeColor = new Color(22f/255f, 186f/255f, 101f/255f);
+          canBuy = false;
+          break;
+      }
+    }
   }
 
   void GetControl() {

@@ -950,6 +950,7 @@ MonoBehaviour:
   lose: 0
   tailPrefab: {fileID: 1173520246578982828, guid: e691a3ed13ffa41569106af0e0492d56,
     type: 3}
+  snakeSkin: {r: 1, g: 1, b: 1, a: 0}
 --- !u!1001 &7870943518798685878
 PrefabInstance:
   m_ObjectHideFlags: 0

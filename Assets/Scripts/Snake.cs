@@ -13,7 +13,7 @@ public class Snake : MonoBehaviour {
 
     bool ate = false;
     public GameObject tailPrefab;
-    public Color snakeSkin;
+    public SpriteRenderer snakeSkin;
 
     private PersistentData persistentScript;
 
@@ -24,6 +24,7 @@ public class Snake : MonoBehaviour {
       lose = false;
       persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
       persistentScript.score = 0;
+      snakeSkin.color = persistentScript.snakeColor;
     }
 
     void Update() {

@@ -16,6 +16,6 @@ public class BuyFromStore : MonoBehaviour {
 
   void Purchase() {
     persistentScript.SendMessage("PriceCheck", cost);
-    persistentScript.SendMessage("PriceCheck", item);
+    persistentScript.SendMessage("BuyItem", item);
   }
 }

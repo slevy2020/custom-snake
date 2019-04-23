@@ -950,7 +950,7 @@ MonoBehaviour:
   lose: 0
   tailPrefab: {fileID: 1173520246578982828, guid: e691a3ed13ffa41569106af0e0492d56,
     type: 3}
-  snakeSkin: {r: 1, g: 1, b: 1, a: 0}
+  snakeSkin: {fileID: 7870943518798685879}
 --- !u!1001 &7870943518798685878
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1033,5 +1033,16 @@ PrefabInstance:
       propertyPath: m_UseFullKinematicContacts
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7591172927276641734, guid: e691a3ed13ffa41569106af0e0492d56,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e691a3ed13ffa41569106af0e0492d56, type: 3}
+--- !u!212 &7870943518798685879 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7591172927276641734, guid: e691a3ed13ffa41569106af0e0492d56,
+    type: 3}
+  m_PrefabInstance: {fileID: 7870943518798685878}
+  m_PrefabAsset: {fileID: 0}

@@ -12,6 +12,9 @@ public class PersistentData : MonoBehaviour {
   private Snake snake;
   private SpawnFood spawnFood;
 
+  public Vector2 upgradeBorderScale = new Vector2(.5f, .5f);
+  public float upgradeBorderOffset = .5f;
+
   public Color snakeColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
   public Color bodyColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
 
@@ -58,6 +61,11 @@ public class PersistentData : MonoBehaviour {
         case "green skin":
           snakeColor = new Color(22f/255f, 186f/255f, 101f/255f, 255f/255f);
           bodyColor = new Color(22f/255f, 186f/255f, 101f/255f, 255f/255f);
+          canBuy = false;
+          break;
+        case "upgrade arena":
+          upgradeBorderScale = new Vector2(1f, 1f);
+          upgradeBorderOffset = 1;
           canBuy = false;
           break;
       }

@@ -3,20 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class SpawnFood : MonoBehaviour {
+  private PersistentData persistentScript;
+
   public GameObject foodPrefab;
+
+  public GameObject borderScale;
+  public float borderOffset;
 
   public Transform borderTop;
   public Transform borderBottom;
   public Transform borderLeft;
   public Transform borderRight;
 
+  public float spawnStartDelay = 3f;
+  public float spawnWait = 4f;
+
   void Start() {
-    InvokeRepeating("Spawn", 3f, 4f);
+    persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
+    InvokeRepeating("Spawn", spawnStartDelay, spawnWait);
+    borderScale.transform.localScale = persistentScript.upgradeBorderScale;
+    borderOffset = persistentScript.upgradeBorderOffset;
   }
 
   public void Spawn() {
-    float x = Random.Range(borderLeft.position.x + .5f, borderRight.position.x - .5f);
-    float y = Random.Range(borderBottom.position.y + .5f, borderTop.position.y - .5f);
+    float x = Random.Range(borderLeft.position.x + borderOffset, borderRight.position.x - borderOffset);
+    float y = Random.Range(borderBottom.position.y + borderOffset, borderTop.position.y - borderOffset);
 
     Instantiate(foodPrefab, new Vector2(x, y), Quaternion.identity);
   }

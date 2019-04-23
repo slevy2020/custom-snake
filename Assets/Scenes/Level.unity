@@ -280,10 +280,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 5920818462466880002, guid: d19a3a96064364705bf8fe1ebde3f993,
     type: 3}
+  borderScale: {fileID: 254605872}
   borderTop: {fileID: 1182794192}
   borderBottom: {fileID: 1659063306}
   borderLeft: {fileID: 549969207}
   borderRight: {fileID: 801506964}
+  spawnStartDelay: 3
+  spawnWait: 4
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

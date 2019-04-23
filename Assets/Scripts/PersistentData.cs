@@ -13,6 +13,7 @@ public class PersistentData : MonoBehaviour {
   private SpawnFood spawnFood;
 
   public Color snakeColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
+  public Color bodyColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
 
   private bool canBuy;
 
@@ -44,6 +45,7 @@ public class PersistentData : MonoBehaviour {
 
   public void PriceCheck(int cost) {
     canBuy = false;
+    Debug.Log("Cost: " + cost);
     if (cost <= money) {
       money -= cost;
       canBuy = true;
@@ -55,6 +57,7 @@ public class PersistentData : MonoBehaviour {
       switch (item) {
         case "green skin":
           snakeColor = new Color(22f/255f, 186f/255f, 101f/255f, 255f/255f);
+          bodyColor = new Color(22f/255f, 186f/255f, 101f/255f, 255f/255f);
           canBuy = false;
           break;
       }

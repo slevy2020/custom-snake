@@ -25,6 +25,7 @@ public class Snake : MonoBehaviour {
       persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
       persistentScript.score = 0;
       snakeSkin.color = persistentScript.snakeColor;
+      tailPrefab.GetComponent<SpriteRenderer>().color = persistentScript.bodyColor;
     }
 
     void Update() {

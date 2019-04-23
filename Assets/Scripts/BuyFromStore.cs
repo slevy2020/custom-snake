@@ -7,6 +7,7 @@ public class BuyFromStore : MonoBehaviour {
   private PersistentData persistentScript;
   public int cost;
   public string item;
+  public bool bought = false;
 
   void Start() {
     persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
@@ -15,7 +16,12 @@ public class BuyFromStore : MonoBehaviour {
   }
 
   void Purchase() {
-    persistentScript.SendMessage("PriceCheck", cost);
-    persistentScript.SendMessage("BuyItem", item);
+    if (!bought) {
+      persistentScript.SendMessage("PriceCheck", cost);
+      if (cost <= persistentScript.money) {
+        bought = true;
+      }
+      persistentScript.SendMessage("BuyItem", item);
+    }
   }
 }

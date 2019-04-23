@@ -19,6 +19,8 @@ public class PersistentData : MonoBehaviour {
   public Color bodyColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
 
   private bool canBuy;
+  public bool[] purchasedItems;
+  public int currentStoreIndex;
 
   private bool scriptControl = false;
 
@@ -46,10 +48,14 @@ public class PersistentData : MonoBehaviour {
     score += 1;
   }
 
+  public void GetStoreIndex(int storeIndex) {
+    currentStoreIndex = storeIndex;
+  }
+
   public void PriceCheck(int cost) {
     canBuy = false;
     Debug.Log("Cost: " + cost);
-    if (cost <= money) {
+    if ((cost <= money) && (purchasedItems[currentStoreIndex] == false)) {
       money -= cost;
       canBuy = true;
     }
@@ -62,11 +68,13 @@ public class PersistentData : MonoBehaviour {
           snakeColor = new Color(22f/255f, 186f/255f, 101f/255f, 255f/255f);
           bodyColor = new Color(22f/255f, 186f/255f, 101f/255f, 255f/255f);
           canBuy = false;
+          purchasedItems[0] = true;
           break;
         case "upgrade arena":
           upgradeBorderScale = new Vector2(1f, 1f);
           upgradeBorderOffset = 1;
           canBuy = false;
+          purchasedItems[1] = true;
           break;
       }
     }

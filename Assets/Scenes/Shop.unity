@@ -258,7 +258,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 5
   item: upgrade arena
+  storeIndex: 1
   bought: 0
+  soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
+    type: 3}
+  soldStampInstance: 0
 --- !u!114 &277011080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,7 +781,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cost: 500
   item: green skin
+  storeIndex: 0
   bought: 0
+  soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
+    type: 3}
+  soldStampInstance: 0
 --- !u!114 &1051660050
 MonoBehaviour:
   m_ObjectHideFlags: 0

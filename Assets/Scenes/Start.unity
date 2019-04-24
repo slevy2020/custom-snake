@@ -543,6 +543,13 @@ MonoBehaviour:
   money: 0
   upgradeBorderScale: {x: 0.5, y: 0.5}
   upgradeBorderOffset: 0.5
+  upgradeSpawnStartDelay: 3
+  upgradeSpawnWait: 4
+  pointsFromFood: 1
+  foodPrefabArray:
+  - {fileID: 5920818462466880002, guid: d19a3a96064364705bf8fe1ebde3f993, type: 3}
+  - {fileID: 5920818462466880002, guid: 2c6a3e00c320742879afdb95973a1bbd, type: 3}
+  currentFoodPrefab: {fileID: 0}
   snakeColor: {r: 1, g: 1, b: 1, a: 1}
   bodyColor: {r: 1, g: 1, b: 1, a: 1}
   purchasedItems: 000000000000000000

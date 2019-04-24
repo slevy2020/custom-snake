@@ -20,9 +20,12 @@ public class SpawnFood : MonoBehaviour {
 
   void Start() {
     persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
+    spawnStartDelay = persistentScript.upgradeSpawnStartDelay;
+    spawnWait = persistentScript.upgradeSpawnWait;
     InvokeRepeating("Spawn", spawnStartDelay, spawnWait);
     borderScale.transform.localScale = persistentScript.upgradeBorderScale;
     borderOffset = persistentScript.upgradeBorderOffset;
+    foodPrefab = persistentScript.currentFoodPrefab;
   }
 
   public void Spawn() {

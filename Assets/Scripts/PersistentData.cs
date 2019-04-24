@@ -15,6 +15,13 @@ public class PersistentData : MonoBehaviour {
   public Vector2 upgradeBorderScale = new Vector2(.5f, .5f);
   public float upgradeBorderOffset = .5f;
 
+  public float upgradeSpawnStartDelay = 3f;
+  public float upgradeSpawnWait = 4f;
+
+  public int pointsFromFood = 1;
+  public GameObject[] foodPrefabArray;
+  public GameObject currentFoodPrefab;
+
   public Color snakeColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
   public Color bodyColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
 
@@ -27,6 +34,7 @@ public class PersistentData : MonoBehaviour {
   void Start() {
     //make this object persistent
     DontDestroyOnLoad(gameObject.transform);
+    currentFoodPrefab = foodPrefabArray[0];
   }
 
   void Update() {
@@ -45,7 +53,7 @@ public class PersistentData : MonoBehaviour {
   }
 
   public void FoodCollected() {
-    score += 1;
+    score += pointsFromFood;
   }
 
   public void GetStoreIndex(int storeIndex) {
@@ -75,6 +83,18 @@ public class PersistentData : MonoBehaviour {
           upgradeBorderOffset = 1;
           canBuy = false;
           purchasedItems[1] = true;
+          break;
+        case "upgrade food spawns":
+          upgradeSpawnStartDelay = 1.5f;
+          upgradeSpawnWait = 2f;
+          canBuy = false;
+          purchasedItems[2] = true;
+          break;
+        case "healthy diet":
+          pointsFromFood = 2;
+          currentFoodPrefab = foodPrefabArray[1];
+          canBuy = false;
+          purchasedItems[3] = true;
           break;
       }
     }

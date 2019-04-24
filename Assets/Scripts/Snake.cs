@@ -69,7 +69,7 @@ public class Snake : MonoBehaviour {
       transform.Translate(currentDir/2);
 
       if (ate) {
-        for (int i=0; i<2; i++) {
+        for (int i=0; i<3; i++) {
           GameObject tailObj = Instantiate(tailPrefab, gapPos, Quaternion.identity);
           tail.Insert(0, tailObj.transform);
           //prevent collision with first piece of the tail
@@ -83,6 +83,7 @@ public class Snake : MonoBehaviour {
         //prevent collision with first piece of the tail
         tail.First().tag = "Untagged";
         tail.ElementAt(1).tag = "body";
+        tail.ElementAt(2).tag = "body";
 
         tail.RemoveAt(tail.Count-1);
       }

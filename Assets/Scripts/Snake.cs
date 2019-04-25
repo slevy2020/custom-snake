@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.UI;
 
 public class Snake : MonoBehaviour {
     Vector2 currentDir = Vector2.right;
@@ -14,6 +15,12 @@ public class Snake : MonoBehaviour {
     bool ate = false;
     public GameObject tailPrefab;
     public SpriteRenderer snakeSkin;
+
+    public bool ghostModeOn = false;
+    private float ghostModeTimer = 3f;
+    private float ghostModeCooldown = 10f;
+    private bool ghostModeReady = true;
+    public Slider ghostSlider;
 
     private PersistentData persistentScript;
 
@@ -50,6 +57,29 @@ public class Snake : MonoBehaviour {
         canTurn = true;
         moveTimer = 0f;
       }
+
+      if (persistentScript.ghostModePurchased) {
+        ghostSlider.value = ghostModeTimer;
+        if (Input.GetKeyDown("space") && (ghostModeReady)) {
+          ghostModeOn = true;
+          ghostModeReady = false;
+        }
+        if (ghostModeOn) {
+          ghostModeTimer -= Time.deltaTime;
+          if (ghostModeTimer < 0) {
+            ghostModeOn = false;
+          }
+        }
+        if (!ghostModeReady) {
+          ghostModeCooldown -= Time.deltaTime;
+          if (ghostModeCooldown < 0) {
+            ghostModeTimer = 3f;
+            ghostModeCooldown = 10f;
+            ghostModeReady = true;
+          }
+        }
+      }
+
     }
 
     void OnTriggerEnter2D(Collider2D collision) {
@@ -57,7 +87,7 @@ public class Snake : MonoBehaviour {
         ate = true;
         persistentScript.FoodCollected();
         Destroy(collision.gameObject);
-      } if (((collision.tag == "wall") || (collision.tag == "body")) && (!lose)) {
+      } if (((collision.tag == "wall") || ((collision.tag == "body") && (!ghostModeOn))) && (!lose)) {
         //wall or snake, go to game end screen
         lose = true;
         persistentScript.GameOver();

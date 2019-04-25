@@ -12,6 +12,8 @@ public class PersistentData : MonoBehaviour {
   private Snake snake;
   private SpawnFood spawnFood;
 
+  private GameObject ghostUI;
+
   public Vector2 upgradeBorderScale = new Vector2(.5f, .5f);
   public float upgradeBorderOffset = .5f;
 
@@ -21,6 +23,8 @@ public class PersistentData : MonoBehaviour {
   public int pointsFromFood = 1;
   public GameObject[] foodPrefabArray;
   public GameObject currentFoodPrefab;
+
+  public bool ghostModePurchased = false;
 
   public Color snakeColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
   public Color bodyColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
@@ -40,6 +44,10 @@ public class PersistentData : MonoBehaviour {
   void Update() {
     if ((SceneManager.GetActiveScene().name == "Level") && (!scriptControl)) {
       GetControl();
+      ghostUI.SetActive(false);
+      if (ghostModePurchased) {
+        ghostUI.SetActive(true);
+      }
     }
   }
 
@@ -96,6 +104,11 @@ public class PersistentData : MonoBehaviour {
           canBuy = false;
           purchasedItems[3] = true;
           break;
+        case "ghost mode":
+          ghostModePurchased = true;
+          canBuy = false;
+          purchasedItems[4] = true;
+          break;
       }
     }
   }
@@ -105,6 +118,8 @@ public class PersistentData : MonoBehaviour {
     snake = GameObject.Find("Head").GetComponent<Snake>();
     //get control of the food spawning
     spawnFood = GameObject.Find("Main Camera").GetComponent<SpawnFood>();
+    //get control of the ghost mode ui
+    ghostUI = GameObject.Find("Ghost Mode UI");
 
     scriptControl = true;
   }

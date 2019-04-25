@@ -16,6 +16,8 @@ public class Snake : MonoBehaviour {
     public GameObject tailPrefab;
     public SpriteRenderer snakeSkin;
 
+    public AudioSource crunchSound;
+
     public bool ghostModeOn = false;
     private float ghostModeTimer = 3f;
     private float ghostModeCooldown = 10f;
@@ -61,7 +63,7 @@ public class Snake : MonoBehaviour {
         moveTimer = 0f;
       }
 
-      if (persistentScript.ghostModePurchased) {
+      if (persistentScript.purchasedItems[4]) {
         ghostSlider.value = ghostModeTimer;
         if (Input.GetKeyDown("space") && (ghostModeReady)) {
           ghostModeOn = true;
@@ -93,6 +95,9 @@ public class Snake : MonoBehaviour {
       if (collision.tag == "food") {
         ate = true;
         persistentScript.FoodCollected();
+        if (persistentScript.purchasedItems[5]) {
+          crunchSound.Play();
+        }
         Destroy(collision.gameObject);
       } if (((collision.tag == "wall") || ((collision.tag == "body") && (!ghostModeOn))) && (!lose)) {
         //wall or snake, go to game end screen

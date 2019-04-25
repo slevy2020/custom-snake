@@ -13,6 +13,7 @@ public class PersistentData : MonoBehaviour {
   private SpawnFood spawnFood;
 
   private GameObject ghostUI;
+  private GameObject backgroundImage;
 
   public Vector2 upgradeBorderScale = new Vector2(.5f, .5f);
   public float upgradeBorderOffset = .5f;
@@ -24,7 +25,9 @@ public class PersistentData : MonoBehaviour {
   public GameObject[] foodPrefabArray;
   public GameObject currentFoodPrefab;
 
-  public bool ghostModePurchased = false;
+//  public bool ghostModePurchased = false;
+
+  public AudioSource backgroundMusic;
 
   public Color snakeColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
   public Color bodyColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
@@ -44,10 +47,6 @@ public class PersistentData : MonoBehaviour {
   void Update() {
     if ((SceneManager.GetActiveScene().name == "Level") && (!scriptControl)) {
       GetControl();
-      ghostUI.SetActive(false);
-      if (ghostModePurchased) {
-        ghostUI.SetActive(true);
-      }
     }
   }
 
@@ -105,9 +104,18 @@ public class PersistentData : MonoBehaviour {
           purchasedItems[3] = true;
           break;
         case "ghost mode":
-          ghostModePurchased = true;
+    //      ghostModePurchased = true;
           canBuy = false;
           purchasedItems[4] = true;
+          break;
+        case "buy audio":
+          backgroundMusic.Play();
+          canBuy = false;
+          purchasedItems[5] = true;
+          break;
+        case "buy background":
+          canBuy = false;
+          purchasedItems[6] = true;
           break;
       }
     }
@@ -120,6 +128,16 @@ public class PersistentData : MonoBehaviour {
     spawnFood = GameObject.Find("Main Camera").GetComponent<SpawnFood>();
     //get control of the ghost mode ui
     ghostUI = GameObject.Find("Ghost Mode UI");
+    ghostUI.SetActive(false);
+    if (purchasedItems[4]) {
+      ghostUI.SetActive(true);
+    }
+    //get control of the background image
+    backgroundImage = GameObject.Find("Background Texture");
+    backgroundImage.SetActive(false);
+    if (purchasedItems[6]) {
+      backgroundImage.SetActive(true);
+    }
 
     scriptControl = true;
   }

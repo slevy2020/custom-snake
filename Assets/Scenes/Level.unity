@@ -1345,6 +1345,8 @@ MonoBehaviour:
   snakeSkin: {fileID: 7870943518798685879}
   ghostModeOn: 0
   ghostSlider: {fileID: 1886145571}
+  sliderFill: {fileID: 1287377707}
+  sliderColor: {r: 0.9372549, g: 0.28235295, b: 0.39215687, a: 1}
 --- !u!1001 &7870943518798685878
 PrefabInstance:
   m_ObjectHideFlags: 0

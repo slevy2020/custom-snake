@@ -534,7 +534,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c63ccf0619e4710a189f1d088cf9e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cost: 1
+  cost: 20
   item: ghost mode
   storeIndex: 4
   bought: 0

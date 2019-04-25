@@ -21,6 +21,8 @@ public class Snake : MonoBehaviour {
     private float ghostModeCooldown = 10f;
     private bool ghostModeReady = true;
     public Slider ghostSlider;
+    public GameObject sliderFill;
+    public Color sliderColor = new Color(239f/255f, 72f/255f, 100f/255f, 1f);
 
     private PersistentData persistentScript;
 
@@ -33,6 +35,7 @@ public class Snake : MonoBehaviour {
       persistentScript.score = 0;
       snakeSkin.color = persistentScript.snakeColor;
       tailPrefab.GetComponent<SpriteRenderer>().color = persistentScript.bodyColor;
+      sliderFill.GetComponent<Image>().color = sliderColor;
     }
 
     void Update() {
@@ -68,11 +71,15 @@ public class Snake : MonoBehaviour {
           ghostModeTimer -= Time.deltaTime;
           if (ghostModeTimer < 0) {
             ghostModeOn = false;
+            sliderColor = new Color(0f, 0f, 0f, 1f);
+            sliderFill.GetComponent<Image>().color = sliderColor;
           }
         }
         if (!ghostModeReady) {
           ghostModeCooldown -= Time.deltaTime;
           if (ghostModeCooldown < 0) {
+            sliderColor = new Color(239f/255f, 72f/255f, 100f/255f, 1f);
+            sliderFill.GetComponent<Image>().color = sliderColor;
             ghostModeTimer = 3f;
             ghostModeCooldown = 10f;
             ghostModeReady = true;

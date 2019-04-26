@@ -7,6 +7,7 @@ TagManager:
   - food
   - wall
   - body
+  - super food
   layers:
   - Default
   - TransparentFX

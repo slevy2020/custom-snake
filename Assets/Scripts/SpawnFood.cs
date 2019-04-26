@@ -6,6 +6,7 @@ public class SpawnFood : MonoBehaviour {
   private PersistentData persistentScript;
 
   public GameObject foodPrefab;
+  public int superFoodSpawnChance;
 
   public GameObject borderScale;
   public float borderOffset;
@@ -32,6 +33,14 @@ public class SpawnFood : MonoBehaviour {
     float x = Random.Range(borderLeft.position.x + borderOffset, borderRight.position.x - borderOffset);
     float y = Random.Range(borderBottom.position.y + borderOffset, borderTop.position.y - borderOffset);
 
+    if (persistentScript.purchasedItems[7]) {
+      float superFoodSpawnRNG = Random.Range(0, 100);
+      if (superFoodSpawnRNG <= superFoodSpawnChance) {
+        foodPrefab = persistentScript.foodPrefabArray[2];
+      } else {
+        foodPrefab = persistentScript.currentFoodPrefab;
+      }
+    }
     Instantiate(foodPrefab, new Vector2(x, y), Quaternion.identity);
   }
 }

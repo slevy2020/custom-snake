@@ -360,6 +360,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   foodPrefab: {fileID: 5920818462466880002, guid: d19a3a96064364705bf8fe1ebde3f993,
     type: 3}
+  superFoodSpawnChance: 10
   borderScale: {fileID: 254605872}
   borderOffset: 0
   borderTop: {fileID: 1182794192}

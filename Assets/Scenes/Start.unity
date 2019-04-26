@@ -546,11 +546,14 @@ MonoBehaviour:
   upgradeBorderOffset: 0.5
   upgradeSpawnStartDelay: 3
   upgradeSpawnWait: 4
-  pointsFromFood: 1
+  standardPointsFromFood: 1
+  currentPointsFromFood: 1
   foodPrefabArray:
   - {fileID: 5920818462466880002, guid: d19a3a96064364705bf8fe1ebde3f993, type: 3}
   - {fileID: 5920818462466880002, guid: 2c6a3e00c320742879afdb95973a1bbd, type: 3}
+  - {fileID: 5920818462466880002, guid: 36ba64bdaa1554dec962d137f481fb1a, type: 3}
   currentFoodPrefab: {fileID: 0}
+  standardFoodPrefab: {fileID: 0}
   backgroundMusic: {fileID: 1354824865}
   snakeColor: {r: 1, g: 1, b: 1, a: 1}
   bodyColor: {r: 1, g: 1, b: 1, a: 1}

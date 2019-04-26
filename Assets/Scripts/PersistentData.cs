@@ -8,6 +8,7 @@ public class PersistentData : MonoBehaviour {
 
   public int score;
   public int money;
+  public int highScore = 0;
 
   private Snake snake;
   private SpawnFood spawnFood;
@@ -21,9 +22,11 @@ public class PersistentData : MonoBehaviour {
   public float upgradeSpawnStartDelay = 3f;
   public float upgradeSpawnWait = 4f;
 
-  public int pointsFromFood = 1;
+  public int standardPointsFromFood = 1;
+  public int currentPointsFromFood = 1;
   public GameObject[] foodPrefabArray;
   public GameObject currentFoodPrefab;
+  public GameObject standardFoodPrefab;
 
 //  public bool ghostModePurchased = false;
 
@@ -42,6 +45,7 @@ public class PersistentData : MonoBehaviour {
     //make this object persistent
     DontDestroyOnLoad(gameObject.transform);
     currentFoodPrefab = foodPrefabArray[0];
+    standardFoodPrefab = foodPrefabArray[0];
   }
 
   void Update() {
@@ -52,6 +56,9 @@ public class PersistentData : MonoBehaviour {
 
   public void GameOver() {
     money += score;
+    if (score > highScore) {
+      highScore = score;
+    }
     Debug.Log("Score: " + score);
     Debug.Log("Money: " + money);
   //  snake.lose = false;
@@ -60,7 +67,7 @@ public class PersistentData : MonoBehaviour {
   }
 
   public void FoodCollected() {
-    score += pointsFromFood;
+    score += currentPointsFromFood;
   }
 
   public void GetStoreIndex(int storeIndex) {
@@ -98,7 +105,9 @@ public class PersistentData : MonoBehaviour {
           purchasedItems[2] = true;
           break;
         case "healthy diet":
-          pointsFromFood = 2;
+          standardPointsFromFood = 2;
+          currentPointsFromFood = 2;
+          standardFoodPrefab = foodPrefabArray[1];
           currentFoodPrefab = foodPrefabArray[1];
           canBuy = false;
           purchasedItems[3] = true;
@@ -116,6 +125,10 @@ public class PersistentData : MonoBehaviour {
         case "buy background":
           canBuy = false;
           purchasedItems[6] = true;
+          break;
+        case "super food":
+          canBuy = false;
+          purchasedItems[7] = true;
           break;
       }
     }

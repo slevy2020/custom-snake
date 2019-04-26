@@ -94,6 +94,15 @@ public class Snake : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D collision) {
       if (collision.tag == "food") {
         ate = true;
+        persistentScript.currentPointsFromFood = persistentScript.standardPointsFromFood;
+        persistentScript.FoodCollected();
+        if (persistentScript.purchasedItems[5]) {
+          crunchSound.Play();
+        }
+        Destroy(collision.gameObject);
+      } if (collision.tag == "super food") {
+        ate = true;
+        persistentScript.currentPointsFromFood = 5;
         persistentScript.FoodCollected();
         if (persistentScript.purchasedItems[5]) {
           crunchSound.Play();

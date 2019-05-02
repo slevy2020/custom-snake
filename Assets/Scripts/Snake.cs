@@ -11,6 +11,12 @@ public class Snake : MonoBehaviour {
     private float moveTimer = 0f; //cooldown for when the player can turn again
     private bool canTurn = true; //the player is allowed to turn
 
+    //vars for multiplayer, set in inspector
+    public string upButton;
+    public string downButton;
+    public string rightButton;
+    public string leftButton;
+
     public bool lose; //starts false, the player has not lost yet
 
     //vars for increasing the tail length
@@ -50,16 +56,16 @@ public class Snake : MonoBehaviour {
     void Update() {
       //when key pressed and not already going that direction or the opposite direction and the player is able to turn,
       //turn in that direction and prevent the player from being able to turn temporarily
-      if (Input.GetKeyDown("w") && (currentDir != Vector2.up) && (currentDir != Vector2.down) && (canTurn)) {
+      if (Input.GetKeyDown(upButton) && (currentDir != Vector2.up) && (currentDir != Vector2.down) && (canTurn)) {
         currentDir = Vector2.up;
         canTurn = false;
-      } else if (Input.GetKeyDown("s") && (currentDir != Vector2.up) && (currentDir != Vector2.down) && (canTurn)) {
+      } else if (Input.GetKeyDown(downButton) && (currentDir != Vector2.up) && (currentDir != Vector2.down) && (canTurn)) {
         currentDir = -Vector2.up;
         canTurn = false;
-      } else if (Input.GetKeyDown("d") && (currentDir != Vector2.right) && (currentDir != Vector2.left) && (canTurn)) {
+      } else if (Input.GetKeyDown(rightButton) && (currentDir != Vector2.right) && (currentDir != Vector2.left) && (canTurn)) {
         currentDir = Vector2.right;
         canTurn = false;
-      } else if (Input.GetKeyDown("a") && (currentDir != Vector2.right) && (currentDir != Vector2.left) && (canTurn)) {
+      } else if (Input.GetKeyDown(leftButton) && (currentDir != Vector2.right) && (currentDir != Vector2.left) && (canTurn)) {
         currentDir = -Vector2.right;
         canTurn = false;
       }

@@ -38,6 +38,14 @@ public class SpawnFood : MonoBehaviour {
     borderScale.transform.localScale = persistentScript.upgradeBorderScale;
     borderOffset = persistentScript.upgradeBorderOffset;
     foodPrefab = persistentScript.currentFoodPrefab;
+
+    if (persistentScript.multiplayer) {
+      spawnStartDelay = 1.5f;
+      spawnWait = 2f;
+      borderScale.transform.localScale = new Vector2(1f, 1f);
+      borderOffset = 1;
+      foodPrefab = persistentScript.foodPrefabArray[0];
+    }
   }
 
   public void Spawn() {
@@ -46,7 +54,7 @@ public class SpawnFood : MonoBehaviour {
     float y = Random.Range(borderBottom.position.y + borderOffset, borderTop.position.y - borderOffset);
 
     //if the 8th upgrade (superfood) has been bought then determine whether or not a superfood should spawn
-    if (persistentScript.purchasedItems[7]) {
+    if ((persistentScript.purchasedItems[7]) || (persistentScript.multiplayer)) {
       //generate a random value from 0-100 (to determine a percentage)
       float superFoodSpawnRNG = Random.Range(0, 100);
       //test if the generated number is within the range of values needed to spawn a superfood

@@ -8,6 +8,7 @@ TagManager:
   - wall
   - body
   - super food
+  - head
   layers:
   - Default
   - TransparentFX

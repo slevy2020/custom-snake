@@ -145,12 +145,16 @@ public class Snake : MonoBehaviour {
         }
         //destroy the instance of the food object
         Destroy(collision.gameObject);
-      } if (((collision.tag == "wall") || ((collision.tag == "body") && (!ghostModeOn))) && (!lose)) {
+      } if (((collision.tag == "wall") || ((collision.tag == "head") && (!ghostModeOn)) || ((collision.tag == "body") && (!ghostModeOn))) && (!lose)) {
         //if the snake collides with a wall (or itself when ghost mode is not active) and they have not yet lost, then:
         //indicate that the player has lost
         lose = true;
-        //run the game over function on the persistent data script
-        persistentScript.GameOver();
+        if (!persistentScript.multiplayer) {
+          //run the game over function on the persistent data script
+          persistentScript.GameOver();
+        } else if (persistentScript.multiplayer) {
+          persistentScript.MultiplayerGameOver();
+        }
       }
     }
 

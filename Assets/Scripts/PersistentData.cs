@@ -11,6 +11,10 @@ public class PersistentData : MonoBehaviour {
   public int money;
   public int highScore = 0;
 
+  public bool multiplayer = false;
+  private Snake playerOne;
+  private Snake playerTwo;
+
   //pointers to the snake and spawn food scripts
   private Snake snake;
   private SpawnFood spawnFood;
@@ -63,6 +67,9 @@ public class PersistentData : MonoBehaviour {
     if ((SceneManager.GetActiveScene().name == "Level") && (!scriptControl)) {
       GetControl();
     }
+    if ((SceneManager.GetActiveScene().name == "Multiplayer") && (!scriptControl)) {
+      GetControlMultiplayer();
+    }
   }
 
   public void GameOver() {
@@ -77,6 +84,11 @@ public class PersistentData : MonoBehaviour {
 
     //load the end scene and remove control of the scripts (to prevent null reference exceptions)
     SceneManager.LoadScene("End");
+    scriptControl = false;
+  }
+
+  public void MultiplayerGameOver() {
+    SceneManager.LoadScene("MultiplayerEnd");
     scriptControl = false;
   }
 
@@ -186,6 +198,16 @@ public class PersistentData : MonoBehaviour {
       backgroundImage.SetActive(true);
     }
 
+    //indicate that the script has control of the other objects in the level scene
+    scriptControl = true;
+  }
+
+  void GetControlMultiplayer() {
+    //get control of the snakes
+    playerOne = GameObject.Find("P1").GetComponent<Snake>();
+    playerTwo = GameObject.Find("P2").GetComponent<Snake>();
+    //get control of the food spawning
+    spawnFood = GameObject.Find("Main Camera").GetComponent<SpawnFood>();
     //indicate that the script has control of the other objects in the level scene
     scriptControl = true;
   }

@@ -6,7 +6,13 @@ using UnityEngine.UI;
 
 public class Play : MonoBehaviour {
 
+  private PersistentData persistentScript;
+
   void Start(){
+    //get access to the persistent data
+    persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
+    //set multiplayer to false
+    persistentScript.multiplayer = false;
     //get access to the button component
     Button start = GetComponent<Button>();
     //when clicked, call the start game function

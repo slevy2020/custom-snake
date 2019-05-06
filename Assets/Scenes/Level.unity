@@ -1420,6 +1420,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f291c2e9e1dc4396b6f7d94b631bbb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  upButton: w
+  downButton: s
+  rightButton: d
+  leftButton: a
   lose: 0
   tailPrefab: {fileID: 1173520246578982828, guid: e691a3ed13ffa41569106af0e0492d56,
     type: 3}

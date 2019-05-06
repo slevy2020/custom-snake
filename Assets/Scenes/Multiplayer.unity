@@ -1044,7 +1044,7 @@ PrefabInstance:
     - target: {fileID: 1173520246578982828, guid: e691a3ed13ffa41569106af0e0492d56,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: head
       objectReference: {fileID: 0}
     - target: {fileID: 8184834198729314645, guid: e691a3ed13ffa41569106af0e0492d56,
         type: 3}
@@ -1781,7 +1781,7 @@ PrefabInstance:
     - target: {fileID: 1173520246578982828, guid: e691a3ed13ffa41569106af0e0492d56,
         type: 3}
       propertyPath: m_TagString
-      value: Untagged
+      value: head
       objectReference: {fileID: 0}
     - target: {fileID: 8184834198729314645, guid: e691a3ed13ffa41569106af0e0492d56,
         type: 3}

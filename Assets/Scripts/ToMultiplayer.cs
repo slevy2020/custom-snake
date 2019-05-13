@@ -7,12 +7,10 @@ using UnityEngine.SceneManagement;
 public class ToMultiplayer : MonoBehaviour {
 
     private PersistentData persistentScript;
-    
+
     void Start() {
       //get access to the persistent data
       persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
-      //set multiplayer to true
-      persistentScript.multiplayer = true;
       //get access to the button component
       Button start = GetComponent<Button>();
       //when clicked, call the start game function
@@ -20,6 +18,8 @@ public class ToMultiplayer : MonoBehaviour {
     }
 
     void StartMultiplayer() {
+      //set multiplayer to true
+      persistentScript.multiplayer = true;
       //load the level scene of the game
       SceneManager.LoadScene("Multiplayer");
     }

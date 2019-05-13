@@ -14,6 +14,8 @@ public class PersistentData : MonoBehaviour {
   public bool multiplayer = false;
   private Snake playerOne;
   private Snake playerTwo;
+  public string[] multiplayerVictoryMessages;
+  public string currentVictoryMessage;
 
   //pointers to the snake and spawn food scripts
   private Snake snake;
@@ -60,6 +62,8 @@ public class PersistentData : MonoBehaviour {
     //reset the food to spawn to be the default
     currentFoodPrefab = foodPrefabArray[0];
     standardFoodPrefab = foodPrefabArray[0];
+
+    currentVictoryMessage = multiplayerVictoryMessages[0];
   }
 
   void Update() {
@@ -95,6 +99,11 @@ public class PersistentData : MonoBehaviour {
   public void FoodCollected() {
     //called from the snake scritpt, add the proper amount of points to the score when food collected
     score += currentPointsFromFood;
+  }
+
+  public void GetMultiplayerWinner(int playerIndex) {
+    //set the current store index to that of the item the player is attempting to buy
+    currentVictoryMessage = multiplayerVictoryMessages[playerIndex];
   }
 
   public void GetStoreIndex(int storeIndex) {

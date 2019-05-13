@@ -16,6 +16,7 @@ public class Snake : MonoBehaviour {
     public string downButton;
     public string rightButton;
     public string leftButton;
+    public int playerIndex;
 
     public bool lose; //starts false, the player has not lost yet
 
@@ -153,6 +154,12 @@ public class Snake : MonoBehaviour {
           //run the game over function on the persistent data script
           persistentScript.GameOver();
         } else if (persistentScript.multiplayer) {
+          if (collision.tag == "head") {
+            int zero = 0;
+            persistentScript.SendMessage("GetMultiplayerWinner", zero);
+          } else {
+            persistentScript.SendMessage("GetMultiplayerWinner", playerIndex);
+          }
           persistentScript.MultiplayerGameOver();
         }
       }

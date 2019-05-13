@@ -675,6 +675,11 @@ MonoBehaviour:
   money: 0
   highScore: 0
   multiplayer: 0
+  multiplayerVictoryMessages:
+  - It's A Tie!
+  - Player 2 Wins!
+  - Player 1 Wins!
+  currentVictoryMessage: It Doesn't Work
   upgradeBorderScale: {x: 0.5, y: 0.5}
   upgradeBorderOffset: 0.5
   upgradeSpawnStartDelay: 3

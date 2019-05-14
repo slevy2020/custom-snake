@@ -64,6 +64,8 @@ public class PersistentData : MonoBehaviour {
     standardFoodPrefab = foodPrefabArray[0];
 
     currentVictoryMessage = multiplayerVictoryMessages[0];
+
+    SceneManager.LoadScene("Start");
   }
 
   void Update() {

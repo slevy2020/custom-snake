@@ -1424,6 +1424,7 @@ MonoBehaviour:
   downButton: s
   rightButton: d
   leftButton: a
+  playerIndex: 0
   lose: 0
   tailPrefab: {fileID: 1173520246578982828, guid: e691a3ed13ffa41569106af0e0492d56,
     type: 3}

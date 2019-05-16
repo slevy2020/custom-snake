@@ -32,6 +32,10 @@ public class SpawnFood : MonoBehaviour {
     spawnStartDelay = persistentScript.upgradeSpawnStartDelay;
     spawnWait = persistentScript.upgradeSpawnWait;
     //start the infinitely repeating spawn function
+    if (persistentScript.multiplayer) {
+      spawnStartDelay = 1.5f;
+      spawnWait = 2f;
+    }
     InvokeRepeating("Spawn", spawnStartDelay, spawnWait);
 
     //update the rest of the vars based on upgraded vars on the persistent script
@@ -40,8 +44,6 @@ public class SpawnFood : MonoBehaviour {
     foodPrefab = persistentScript.currentFoodPrefab;
 
     if (persistentScript.multiplayer) {
-      spawnStartDelay = 1.5f;
-      spawnWait = 2f;
       borderScale.transform.localScale = new Vector2(1f, 1f);
       borderOffset = 1;
       foodPrefab = persistentScript.foodPrefabArray[0];
@@ -54,7 +56,7 @@ public class SpawnFood : MonoBehaviour {
     float y = Random.Range(borderBottom.position.y + borderOffset, borderTop.position.y - borderOffset);
 
     //if the 8th upgrade (superfood) has been bought then determine whether or not a superfood should spawn
-    if ((persistentScript.purchasedItems[7]) || (persistentScript.multiplayer)) {
+    if ((persistentScript.purchasedItems[7]) && (!persistentScript.multiplayer)) {
       //generate a random value from 0-100 (to determine a percentage)
       float superFoodSpawnRNG = Random.Range(0, 100);
       //test if the generated number is within the range of values needed to spawn a superfood

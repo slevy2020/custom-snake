@@ -16,6 +16,8 @@ public class PersistentData : MonoBehaviour {
   private Snake playerTwo;
   public string[] multiplayerVictoryMessages;
   public string currentVictoryMessage;
+  public Color playerOneColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
+  public Color playerTwoColor = new Color(255f/255f, 0f/255f, 255f/255f, 255f/255f);
 
   //pointers to the snake and spawn food scripts
   private Snake snake;
@@ -216,7 +218,9 @@ public class PersistentData : MonoBehaviour {
   void GetControlMultiplayer() {
     //get control of the snakes
     playerOne = GameObject.Find("P1").GetComponent<Snake>();
+    playerOne.GetComponent<SpriteRenderer>().color = playerOneColor;
     playerTwo = GameObject.Find("P2").GetComponent<Snake>();
+    playerTwo.GetComponent<SpriteRenderer>().color = playerTwoColor;
     //get control of the food spawning
     spawnFood = GameObject.Find("Main Camera").GetComponent<SpawnFood>();
     //indicate that the script has control of the other objects in the level scene

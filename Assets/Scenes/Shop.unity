@@ -259,6 +259,7 @@ MonoBehaviour:
   cost: 5
   item: buy background
   storeIndex: 6
+  upgradeTier: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -490,6 +491,7 @@ MonoBehaviour:
   cost: 100
   item: upgrade arena
   storeIndex: 1
+  upgradeTier: 0000000001000000
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -768,6 +770,7 @@ MonoBehaviour:
   cost: 20
   item: ghost mode
   storeIndex: 4
+  upgradeTier: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1018,6 +1021,7 @@ MonoBehaviour:
   cost: 50
   item: healthy diet
   storeIndex: 3
+  upgradeTier: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1426,6 +1430,7 @@ MonoBehaviour:
   cost: 500
   item: green skin
   storeIndex: 0
+  upgradeTier: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1629,6 +1634,7 @@ MonoBehaviour:
   cost: 75
   item: super food
   storeIndex: 7
+  upgradeTier: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1766,6 +1772,7 @@ MonoBehaviour:
   cost: 15
   item: upgrade food spawns
   storeIndex: 2
+  upgradeTier: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1977,6 +1984,7 @@ MonoBehaviour:
   cost: 5
   item: buy audio
   storeIndex: 5
+  upgradeTier: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}

@@ -10,6 +10,7 @@ public class BuyFromStore : MonoBehaviour {
   public int cost; //how much the item costs, set in inspector
   public string item; //what the name of the item is, set in inspector
   public int storeIndex; //the index of the item, to be used on the persistent script, set in inspector
+  public int[] upgradeTier;
 
   public bool bought = false; //the item has not been purchased yet
   public Image soldStamp; //image to put over button when purchased

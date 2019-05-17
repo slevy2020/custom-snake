@@ -49,7 +49,9 @@ public class Snake : MonoBehaviour {
       //set the score to 0 on the persistent script
       persistentScript.score = 0;
       //update vars based on upgrades on the persistent script
-      snakeSkin.color = persistentScript.snakeColor;
+      if (!persistentScript.multiplayer) {
+        snakeSkin.color = persistentScript.snakeColor;
+      }
       tailPrefab.GetComponent<SpriteRenderer>().color = persistentScript.bodyColor;
       sliderFill.GetComponent<Image>().color = sliderColor;
     }

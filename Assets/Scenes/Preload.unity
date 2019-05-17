@@ -266,6 +266,7 @@ MonoBehaviour:
   bodyColor: {r: 1, g: 1, b: 1, a: 1}
   purchasedItems: 000000000000000000
   currentStoreIndex: 0
+  scriptControl: 0
 --- !u!4 &623158177
 Transform:
   m_ObjectHideFlags: 0

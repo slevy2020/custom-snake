@@ -20,6 +20,8 @@ public class Play : MonoBehaviour {
   void StartGame() {
     //set multiplayer to false
     persistentScript.multiplayer = false;
+    //set script control to false
+    persistentScript.scriptControl = false;
     //load the level scene of the game
     SceneManager.LoadScene("Level");
   }

@@ -20,6 +20,8 @@ public class ToMultiplayer : MonoBehaviour {
     void StartMultiplayer() {
       //set multiplayer to true
       persistentScript.multiplayer = true;
+      //set script control to false
+      persistentScript.scriptControl = false;
       //load the level scene of the game
       SceneManager.LoadScene("Multiplayer");
     }

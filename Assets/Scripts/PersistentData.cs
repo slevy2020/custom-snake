@@ -55,7 +55,7 @@ public class PersistentData : MonoBehaviour {
   public int currentStoreIndex;
 
   //whether or not the persistent script has control of the other objects in the level scene
-  private bool scriptControl = false;
+  public bool scriptControl = false;
 
   void Start() {
     //make this object persistent
@@ -74,9 +74,11 @@ public class PersistentData : MonoBehaviour {
     //if in the level scene and does not have control of the scripts, then get control
     if ((SceneManager.GetActiveScene().name == "Level") && (!scriptControl)) {
       GetControl();
+      Debug.Log("Level Control");
     }
     if ((SceneManager.GetActiveScene().name == "Multiplayer") && (!scriptControl)) {
       GetControlMultiplayer();
+      Debug.Log("Multiplayer Control");
     }
   }
 
@@ -92,12 +94,12 @@ public class PersistentData : MonoBehaviour {
 
     //load the end scene and remove control of the scripts (to prevent null reference exceptions)
     SceneManager.LoadScene("End");
-    scriptControl = false;
+//    scriptControl = false;
   }
 
   public void MultiplayerGameOver() {
     SceneManager.LoadScene("MultiplayerEnd");
-    scriptControl = false;
+//    scriptControl = false;
   }
 
   public void FoodCollected() {
@@ -219,8 +221,11 @@ public class PersistentData : MonoBehaviour {
     //get control of the snakes
     playerOne = GameObject.Find("P1").GetComponent<Snake>();
     playerOne.GetComponent<SpriteRenderer>().color = playerOneColor;
+    playerOne.tailPrefab.GetComponent<SpriteRenderer>().color = playerOneColor;
+
     playerTwo = GameObject.Find("P2").GetComponent<Snake>();
     playerTwo.GetComponent<SpriteRenderer>().color = playerTwoColor;
+    playerTwo.tailPrefab.GetComponent<SpriteRenderer>().color = playerTwoColor;
     //get control of the food spawning
     spawnFood = GameObject.Find("Main Camera").GetComponent<SpawnFood>();
     //indicate that the script has control of the other objects in the level scene

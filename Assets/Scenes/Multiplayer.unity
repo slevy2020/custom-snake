@@ -963,7 +963,7 @@ MonoBehaviour:
   leftButton: left
   playerIndex: 2
   lose: 0
-  tailPrefab: {fileID: 1173520246578982828, guid: e691a3ed13ffa41569106af0e0492d56,
+  tailPrefab: {fileID: 1173520246578982828, guid: 7f64d666012fd4b0898971aac7282c60,
     type: 3}
   snakeSkin: {fileID: 1542828336}
   crunchSound: {fileID: 1542828338}

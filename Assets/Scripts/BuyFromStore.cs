@@ -11,6 +11,7 @@ public class BuyFromStore : MonoBehaviour {
   public string item; //what the name of the item is, set in inspector
   public int storeIndex; //the index of the item, to be used on the persistent script, set in inspector
   public int[] upgradeTier;
+  public int currentUpgradeTier;
 
   public bool bought = false; //the item has not been purchased yet
   public Image soldStamp; //image to put over button when purchased
@@ -28,7 +29,7 @@ public class BuyFromStore : MonoBehaviour {
 
   void Update() {
     //if the item has been purchased and the sold object has been placed, then:
-    if ((persistentScript.purchasedItems[storeIndex]) && (!soldStampInstance)) {
+    if ((bought) && (!soldStampInstance)) {
       //instantiate the sold object and assign it to a variable
       var soldStampChild = Instantiate(soldStamp, transform.position, Quaternion.identity);
       //move the sold object to the canvas so it actually appears
@@ -42,11 +43,15 @@ public class BuyFromStore : MonoBehaviour {
     //if the item has not yet been bought, run the functions to buy it on the persistent script
     if (!bought) {
       persistentScript.SendMessage("GetStoreIndex", storeIndex);
-      persistentScript.SendMessage("PriceCheck", cost);
       //if the player can afford it, set bought to true
       if (cost <= persistentScript.money) {
-        bought = true;
+        currentUpgradeTier += 1;
+        if ((upgradeTier.Length % (currentUpgradeTier)) == 0) {
+          bought = true;
+        }
       }
+      persistentScript.SendMessage("UpgradeCheck", bought);
+      persistentScript.SendMessage("PriceCheck", cost);
       persistentScript.SendMessage("BuyItem", item);
     }
   }

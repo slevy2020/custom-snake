@@ -19,6 +19,8 @@ public class PersistentData : MonoBehaviour {
   public Color playerOneColor = new Color(255f/255f, 255f/255f, 255f/255f, 255f/255f);
   public Color playerTwoColor = new Color(255f/255f, 0f/255f, 255f/255f, 255f/255f);
 
+  public bool upgradeComplete = false;
+
   //pointers to the snake and spawn food scripts
   private Snake snake;
   private SpawnFood spawnFood;
@@ -74,11 +76,9 @@ public class PersistentData : MonoBehaviour {
     //if in the level scene and does not have control of the scripts, then get control
     if ((SceneManager.GetActiveScene().name == "Level") && (!scriptControl)) {
       GetControl();
-      Debug.Log("Level Control");
     }
     if ((SceneManager.GetActiveScene().name == "Multiplayer") && (!scriptControl)) {
       GetControlMultiplayer();
-      Debug.Log("Multiplayer Control");
     }
   }
 
@@ -117,11 +117,15 @@ public class PersistentData : MonoBehaviour {
     currentStoreIndex = storeIndex;
   }
 
+  public void UpgradeCheck(bool bought) {
+    upgradeComplete = bought;
+  }
+
   public void PriceCheck(int cost) {
     //assume that the player cannot afford the item
     canBuy = false;
     //if the player can afford it and has not already bought the item with this store index, then:
-    if ((cost <= money) && (purchasedItems[currentStoreIndex] == false)) {
+    if ((cost <= money) && (!upgradeComplete)) {
       //subtract the cost from the total money
       money -= cost;
       //allow the player to buy the object

@@ -20,6 +20,7 @@ public class PersistentData : MonoBehaviour {
   public Color playerTwoColor = new Color(255f/255f, 0f/255f, 255f/255f, 255f/255f);
 
   public bool upgradeComplete = false;
+  public bool[] purchasedUpgrades;
 
   //pointers to the snake and spawn food scripts
   private Snake snake;
@@ -144,6 +145,9 @@ public class PersistentData : MonoBehaviour {
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[0] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[0] = true;
+          }
           break;
         case "upgrade arena":
           //increase the scale of the arena walls to make a bigger arena
@@ -153,6 +157,9 @@ public class PersistentData : MonoBehaviour {
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[1] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[1] = true;
+          }
           break;
         case "upgrade food spawns":
           //decrease how long it takes to spawn food
@@ -161,6 +168,9 @@ public class PersistentData : MonoBehaviour {
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[2] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[2] = true;
+          }
           break;
         case "healthy diet":
           //increase how many points the player gets for each food eaten
@@ -172,11 +182,17 @@ public class PersistentData : MonoBehaviour {
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[3] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[3] = true;
+          }
           break;
         case "ghost mode":
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[4] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[4] = true;
+          }
           break;
         case "buy audio":
           //start playing the background music
@@ -184,16 +200,26 @@ public class PersistentData : MonoBehaviour {
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[5] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[5] = true;
+          }
           break;
         case "buy background":
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[6] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[6] = true;
+            Debug.Log("all background upgrades purchased");
+          }
           break;
         case "super food":
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[7] = true;
+          if (upgradeComplete) {
+            purchasedUpgrades[7] = true;
+          }
           break;
       }
     }

@@ -249,6 +249,8 @@ MonoBehaviour:
   currentVictoryMessage: It Doesn't Work
   playerOneColor: {r: 1, g: 1, b: 1, a: 1}
   playerTwoColor: {r: 1, g: 0, b: 1, a: 1}
+  upgradeComplete: 0
+  purchasedUpgrades: 000000000000000000
   upgradeBorderScale: {x: 0.5, y: 0.5}
   upgradeBorderOffset: 0.5
   upgradeSpawnStartDelay: 3

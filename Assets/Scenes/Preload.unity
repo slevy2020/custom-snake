@@ -251,6 +251,8 @@ MonoBehaviour:
   playerTwoColor: {r: 1, g: 0, b: 1, a: 1}
   upgradeComplete: 0
   purchasedUpgrades: 000000000000000000
+  MAX_UPGRADES: 030000000300000003000000030000000300000003000000030000000300000003000000
+  upgradeTiers: 000000000000000000000000000000000000000000000000000000000000000000000000
   upgradeBorderScale: {x: 0.5, y: 0.5}
   upgradeBorderOffset: 0.5
   upgradeSpawnStartDelay: 3

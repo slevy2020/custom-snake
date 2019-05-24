@@ -21,6 +21,8 @@ public class PersistentData : MonoBehaviour {
 
   public bool upgradeComplete = false;
   public bool[] purchasedUpgrades;
+  public int[] MAX_UPGRADES;
+  public int[] upgradeTiers;
 
   //pointers to the snake and spawn food scripts
   private Snake snake;
@@ -144,9 +146,10 @@ public class PersistentData : MonoBehaviour {
           bodyColor = new Color(22f/255f, 186f/255f, 101f/255f, 255f/255f);
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[0] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[0] = true;
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
         case "upgrade arena":
@@ -156,9 +159,10 @@ public class PersistentData : MonoBehaviour {
           upgradeBorderOffset = 1;
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[1] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[1] = true;
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
         case "upgrade food spawns":
@@ -167,9 +171,10 @@ public class PersistentData : MonoBehaviour {
           upgradeSpawnWait = 2f;
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[2] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[2] = true;
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
         case "healthy diet":
@@ -181,17 +186,19 @@ public class PersistentData : MonoBehaviour {
           currentFoodPrefab = foodPrefabArray[1];
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[3] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[3] = true;
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
         case "ghost mode":
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[4] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[4] = true;
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
         case "buy audio":
@@ -199,26 +206,28 @@ public class PersistentData : MonoBehaviour {
           backgroundMusic.Play();
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[5] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[5] = true;
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
         case "buy background":
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[6] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[6] = true;
-            Debug.Log("all background upgrades purchased");
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
         case "super food":
           //prevent the player from buying this item again
           canBuy = false;
-          purchasedItems[7] = true;
+          purchasedItems[currentStoreIndex] = true;
+          upgradeTiers[currentStoreIndex] = upgradeTiers[currentStoreIndex] + 1;
           if (upgradeComplete) {
-            purchasedUpgrades[7] = true;
+            purchasedUpgrades[currentStoreIndex] = true;
           }
           break;
       }

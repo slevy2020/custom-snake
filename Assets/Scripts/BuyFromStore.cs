@@ -47,7 +47,7 @@ public class BuyFromStore : MonoBehaviour {
       //if the player can afford it, set bought to true
       if (cost <= persistentScript.money) {
   //      currentUpgradeTier += 1;
-        if (upgradeTier.Length != persistentScript.MAX_UPGRADES[storeIndex]) {
+        if (persistentScript.upgradeTiers[storeIndex] >= (persistentScript.MAX_UPGRADES[storeIndex] - 1)) {
           bought = true;
         }
       }

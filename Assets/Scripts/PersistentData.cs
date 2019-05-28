@@ -24,6 +24,9 @@ public class PersistentData : MonoBehaviour {
   public int[] MAX_UPGRADES;
   public int[] upgradeTiers;
 
+  public float arenaScaling = .25f;
+  public float arenaBase = .5f;
+
   //pointers to the snake and spawn food scripts
   private Snake snake;
   private SpawnFood spawnFood;
@@ -154,9 +157,10 @@ public class PersistentData : MonoBehaviour {
           break;
         case "upgrade arena":
           //increase the scale of the arena walls to make a bigger arena
-          upgradeBorderScale = new Vector2(1f, 1f);
+          upgradeBorderScale = new Vector2(arenaBase + arenaScaling, arenaBase + arenaScaling);
+          arenaScaling = arenaScaling + .25f;
           //prevent the food from spawning inside the walls
-          upgradeBorderOffset = 1;
+          upgradeBorderOffset = .5f * (arenaBase + arenaScaling);
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[currentStoreIndex] = true;

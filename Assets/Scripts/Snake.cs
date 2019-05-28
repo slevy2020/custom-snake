@@ -54,6 +54,9 @@ public class Snake : MonoBehaviour {
       }
       tailPrefab.GetComponent<SpriteRenderer>().color = persistentScript.bodyColor;
       sliderFill.GetComponent<Image>().color = sliderColor;
+
+      ghostModeTimer = persistentScript.upgradeGhostTimer;
+      ghostSlider.maxValue = ghostModeTimer;
     }
 
     void Update() {
@@ -112,7 +115,7 @@ public class Snake : MonoBehaviour {
             sliderColor = new Color(239f/255f, 72f/255f, 100f/255f, 1f);
             sliderFill.GetComponent<Image>().color = sliderColor;
             //reset the timers and allow the player to use ghost mode again
-            ghostModeTimer = 3f;
+            ghostModeTimer = persistentScript.upgradeGhostTimer;
             ghostModeCooldown = 10f;
             ghostModeReady = true;
           }

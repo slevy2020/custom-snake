@@ -24,8 +24,11 @@ public class PersistentData : MonoBehaviour {
   public int[] MAX_UPGRADES;
   public int[] upgradeTiers;
 
-  public float arenaScaling = .25f;
+  public float arenaScaling = .166f;
   public float arenaBase = .5f;
+
+  public float upgradeGhostTimer = 1f;
+  public float ghostTimerScaling = 2f;
 
   //pointers to the snake and spawn food scripts
   private Snake snake;
@@ -158,7 +161,7 @@ public class PersistentData : MonoBehaviour {
         case "upgrade arena":
           //increase the scale of the arena walls to make a bigger arena
           upgradeBorderScale = new Vector2(arenaBase + arenaScaling, arenaBase + arenaScaling);
-          arenaScaling = arenaScaling + .25f;
+          arenaScaling = arenaScaling + .1666f;
           //prevent the food from spawning inside the walls
           upgradeBorderOffset = .5f * (arenaBase + arenaScaling);
           //prevent the player from buying this item again
@@ -197,6 +200,7 @@ public class PersistentData : MonoBehaviour {
           }
           break;
         case "ghost mode":
+          upgradeGhostTimer = upgradeGhostTimer + ghostTimerScaling;
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[currentStoreIndex] = true;

@@ -251,14 +251,13 @@ MonoBehaviour:
   playerTwoColor: {r: 1, g: 0, b: 1, a: 1}
   upgradeComplete: 0
   purchasedUpgrades: 000000000000000000
-  MAX_UPGRADES: 010000000300000001000000010000000300000001000000010000000100000001000000
+  MAX_UPGRADES: 010000000300000003000000010000000300000001000000010000000100000001000000
   upgradeTiers: 000000000000000000000000000000000000000000000000000000000000000000000000
   arenaScaling: 0.1666
   arenaBase: 0.5
   upgradeGhostTimer: 1
-  upgradeGhostCooldown: 11.5
   ghostTimerScaling: 2
-  ghostCooldownScaling: 1.5
+  spawnStartDelayScaling: 0.75
   upgradeBorderScale: {x: 0.5, y: 0.5}
   upgradeBorderOffset: 0.5
   upgradeSpawnStartDelay: 3

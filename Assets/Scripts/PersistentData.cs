@@ -30,6 +30,8 @@ public class PersistentData : MonoBehaviour {
   public float upgradeGhostTimer = 1f;
   public float ghostTimerScaling = 2f;
 
+  public float spawnWaitScaling = 1f;
+
   //pointers to the snake and spawn food scripts
   private Snake snake;
   private SpawnFood spawnFood;
@@ -175,7 +177,7 @@ public class PersistentData : MonoBehaviour {
         case "upgrade food spawns":
           //decrease how long it takes to spawn food
           upgradeSpawnStartDelay = 1.5f;
-          upgradeSpawnWait = 2f;
+          upgradeSpawnWait = upgradeSpawnWait - spawnWaitScaling;
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[currentStoreIndex] = true;

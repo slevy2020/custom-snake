@@ -31,6 +31,8 @@ public class SpawnFood : MonoBehaviour {
     //update the spawn start and delay based on upgraded vars on the persistent script
     spawnStartDelay = persistentScript.upgradeSpawnStartDelay;
     spawnWait = persistentScript.upgradeSpawnWait;
+
+    superFoodSpawnChance = persistentScript.upgradeSuperFood;
     //start the infinitely repeating spawn function
     if (persistentScript.multiplayer) {
       spawnStartDelay = 1.5f;

@@ -32,6 +32,8 @@ public class PersistentData : MonoBehaviour {
 
   public float spawnWaitScaling = 1f;
 
+  public int upgradeSuperFood = 0;
+
   //pointers to the snake and spawn food scripts
   private Snake snake;
   private SpawnFood spawnFood;
@@ -232,6 +234,7 @@ public class PersistentData : MonoBehaviour {
           }
           break;
         case "super food":
+          upgradeSuperFood = upgradeSuperFood + 10;
           //prevent the player from buying this item again
           canBuy = false;
           purchasedItems[currentStoreIndex] = true;

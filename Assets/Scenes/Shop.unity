@@ -261,6 +261,7 @@ MonoBehaviour:
   storeIndex: 6
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -494,6 +495,7 @@ MonoBehaviour:
   storeIndex: 1
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 64000000c80000002c010000
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -774,6 +776,7 @@ MonoBehaviour:
   storeIndex: 4
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 140000003c000000b4000000
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1026,6 +1029,7 @@ MonoBehaviour:
   storeIndex: 3
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1436,6 +1440,7 @@ MonoBehaviour:
   storeIndex: 0
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1641,6 +1646,7 @@ MonoBehaviour:
   storeIndex: 7
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 4b0000007d000000af000000fa000000
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1780,6 +1786,7 @@ MonoBehaviour:
   storeIndex: 2
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 0f0000003200000096000000
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1993,6 +2000,7 @@ MonoBehaviour:
   storeIndex: 5
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
+  upgradeCosts: 
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}

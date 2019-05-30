@@ -13,6 +13,8 @@ public class BuyFromStore : MonoBehaviour {
   public int[] upgradeTier;
   public int currentUpgradeTier;
 
+  public int[] upgradeCosts;
+
   public bool bought = false; //the item has not been purchased yet
   public Image soldStamp; //image to put over button when purchased
   public bool soldStampInstance = false; //the sold object has not been placed yet
@@ -20,6 +22,8 @@ public class BuyFromStore : MonoBehaviour {
   void Start() {
     //get access to the persistent data script
     persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
+
+    cost = upgradeCosts[persistentScript.upgradeTiers[storeIndex]];
 
     //get access to the button component
     Button buy = GetComponent<Button>();
@@ -54,6 +58,7 @@ public class BuyFromStore : MonoBehaviour {
       persistentScript.SendMessage("PriceCheck", cost);
       persistentScript.SendMessage("UpgradeCheck", bought);
       persistentScript.SendMessage("BuyItem", item);
+      cost = upgradeCosts[persistentScript.upgradeTiers[storeIndex]];
     }
   }
 }

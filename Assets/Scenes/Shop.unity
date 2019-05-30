@@ -262,6 +262,8 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 
+  storeIcons: []
+  currentStoreIcon: {fileID: 0}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -496,6 +498,11 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 64000000c80000002c010000
+  storeIcons:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  currentStoreIcon: {fileID: 277011081}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -562,7 +569,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 20e04ea13695b48008e887ec0232c056, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 95ce97ce747a44a709af575e1af229d2, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -777,6 +784,8 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 140000003c000000b4000000
+  storeIcons: []
+  currentStoreIcon: {fileID: 0}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -843,7 +852,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: f4526dcde9f2649689ae97a566a93c40, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e063e4e25bd3c441cbacf3b7054907ed, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1030,6 +1039,8 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 
+  storeIcons: []
+  currentStoreIcon: {fileID: 0}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1441,6 +1452,8 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 
+  storeIcons: []
+  currentStoreIcon: {fileID: 0}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1647,6 +1660,8 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 4b0000007d000000af000000fa000000
+  storeIcons: []
+  currentStoreIcon: {fileID: 0}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1713,7 +1728,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 90809326968174a80be1b0a2d202fab4, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5b39efa77654c4ca5b667d682eb99d95, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1787,6 +1802,8 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 0f0000003200000096000000
+  storeIcons: []
+  currentStoreIcon: {fileID: 0}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1853,7 +1870,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 922f751df0d4e4557adf9f8c591a4ecd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ce526e759b8364695aeaaf7a097df499, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2001,6 +2018,8 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 
+  storeIcons: []
+  currentStoreIcon: {fileID: 0}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}

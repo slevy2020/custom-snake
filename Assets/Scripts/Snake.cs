@@ -53,7 +53,9 @@ public class Snake : MonoBehaviour {
         snakeSkin.color = persistentScript.snakeColor;
       }
       tailPrefab.GetComponent<SpriteRenderer>().color = persistentScript.bodyColor;
-      sliderFill.GetComponent<Image>().color = sliderColor;
+      if (!persistentScript.multiplayer) {
+        sliderFill.GetComponent<Image>().color = sliderColor;
+      }
 
       ghostModeTimer = persistentScript.upgradeGhostTimer;
       ghostSlider.maxValue = ghostModeTimer;
@@ -87,7 +89,7 @@ public class Snake : MonoBehaviour {
       }
 
       //if the player has purchased the 5th upgrade (ghost mode), then:
-      if (persistentScript.purchasedItems[4]) {
+      if (persistentScript.purchasedItems[4] && !persistentScript.multiplayer) {
         //reset the value of the ghost mode timer
         ghostSlider.value = ghostModeTimer;
         //when the space bar is pressed and if the player is able to use ghost mode,

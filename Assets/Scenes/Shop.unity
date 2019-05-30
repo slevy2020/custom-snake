@@ -261,9 +261,10 @@ MonoBehaviour:
   storeIndex: 6
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
-  upgradeCosts: 
-  storeIcons: []
-  currentStoreIcon: {fileID: 0}
+  upgradeCosts: 05000000
+  currentStoreIcon: {fileID: 184311073}
+  storeIcons:
+  - {fileID: 21300000, guid: 123012a422c884fad9bc664507caf9d3, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -498,11 +499,11 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 64000000c80000002c010000
-  storeIcons:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   currentStoreIcon: {fileID: 277011081}
+  storeIcons:
+  - {fileID: 21300000, guid: 95ce97ce747a44a709af575e1af229d2, type: 3}
+  - {fileID: 21300000, guid: 383ebe3369abf4dbf9ced2b36e499365, type: 3}
+  - {fileID: 21300000, guid: 27a79d5a9b6ab45109957868cf162c48, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -784,8 +785,11 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 140000003c000000b4000000
-  storeIcons: []
-  currentStoreIcon: {fileID: 0}
+  currentStoreIcon: {fileID: 594081649}
+  storeIcons:
+  - {fileID: 21300000, guid: e063e4e25bd3c441cbacf3b7054907ed, type: 3}
+  - {fileID: 21300000, guid: f3d385b73a948453b8015dc3699bf2a9, type: 3}
+  - {fileID: 21300000, guid: 2c7466a6154ab4ed9be12f880642c173, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1038,9 +1042,10 @@ MonoBehaviour:
   storeIndex: 3
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
-  upgradeCosts: 
-  storeIcons: []
-  currentStoreIcon: {fileID: 0}
+  upgradeCosts: 32000000
+  currentStoreIcon: {fileID: 726576361}
+  storeIcons:
+  - {fileID: 21300000, guid: 15a720117e12a4d72a0f509b287fbe6e, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1451,9 +1456,10 @@ MonoBehaviour:
   storeIndex: 0
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
-  upgradeCosts: 
-  storeIcons: []
-  currentStoreIcon: {fileID: 0}
+  upgradeCosts: f4010000
+  currentStoreIcon: {fileID: 1051660051}
+  storeIcons:
+  - {fileID: 21300000, guid: a735d108ca31d453890c878a66cbc65b, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1660,8 +1666,12 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 4b0000007d000000af000000fa000000
-  storeIcons: []
-  currentStoreIcon: {fileID: 0}
+  currentStoreIcon: {fileID: 1349107747}
+  storeIcons:
+  - {fileID: 21300000, guid: 5b39efa77654c4ca5b667d682eb99d95, type: 3}
+  - {fileID: 21300000, guid: cb39b7508f78b4bb7b099a06e88653ca, type: 3}
+  - {fileID: 21300000, guid: 40059fa8d48f34e989254f0ba9f2ee3d, type: 3}
+  - {fileID: 21300000, guid: 3277c5f1a30254415853a99322f5d8b2, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -1802,8 +1812,11 @@ MonoBehaviour:
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
   upgradeCosts: 0f0000003200000096000000
-  storeIcons: []
-  currentStoreIcon: {fileID: 0}
+  currentStoreIcon: {fileID: 1789080895}
+  storeIcons:
+  - {fileID: 21300000, guid: ce526e759b8364695aeaaf7a097df499, type: 3}
+  - {fileID: 21300000, guid: e0f78593a252748e48459ca9c19b99fd, type: 3}
+  - {fileID: 21300000, guid: a5b32a202645f4cf6b9b6c0f0756e136, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}
@@ -2017,9 +2030,10 @@ MonoBehaviour:
   storeIndex: 5
   upgradeTier: 010000000200000003000000
   currentUpgradeTier: 1
-  upgradeCosts: 
-  storeIcons: []
-  currentStoreIcon: {fileID: 0}
+  upgradeCosts: 05000000
+  currentStoreIcon: {fileID: 1898128580}
+  storeIcons:
+  - {fileID: 21300000, guid: c2e183e207c9d4da197e085c1697d881, type: 3}
   bought: 0
   soldStamp: {fileID: 7600571255124403608, guid: cb18f27e662234365a8034bab98fc51c,
     type: 3}

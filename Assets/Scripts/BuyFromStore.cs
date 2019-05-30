@@ -15,6 +15,7 @@ public class BuyFromStore : MonoBehaviour {
 
   public int[] upgradeCosts;
   public Image currentStoreIcon;
+  public Sprite[] storeIcons;
 
   public bool bought = false; //the item has not been purchased yet
   public Image soldStamp; //image to put over button when purchased
@@ -24,7 +25,13 @@ public class BuyFromStore : MonoBehaviour {
     //get access to the persistent data script
     persistentScript = GameObject.Find("Persistent Object").GetComponent<PersistentData>();
 
-    cost = upgradeCosts[persistentScript.upgradeTiers[storeIndex]];
+    if (!persistentScript.purchasedUpgrades[storeIndex]) {
+      cost = upgradeCosts[(persistentScript.upgradeTiers[storeIndex])];
+      currentStoreIcon.sprite = storeIcons[(persistentScript.upgradeTiers[storeIndex])];
+    } else if (persistentScript.purchasedUpgrades[storeIndex]) {
+      cost = upgradeCosts[upgradeCosts.Length - 1];
+      currentStoreIcon.sprite = storeIcons[storeIcons.Length - 1];
+    }
 
     //get access to the button component
     Button buy = GetComponent<Button>();
@@ -33,7 +40,6 @@ public class BuyFromStore : MonoBehaviour {
   }
 
   void Update() {
-    currentStoreIcon = storeIcons[persistentScript.upgradeTiers[storeIndex]];
     //if the item has been purchased and the sold object has been placed, then:
     if ((persistentScript.purchasedUpgrades[storeIndex]) && (!soldStampInstance)) {
       //instantiate the sold object and assign it to a variable
@@ -60,7 +66,11 @@ public class BuyFromStore : MonoBehaviour {
       persistentScript.SendMessage("PriceCheck", cost);
       persistentScript.SendMessage("UpgradeCheck", bought);
       persistentScript.SendMessage("BuyItem", item);
-      cost = upgradeCosts[persistentScript.upgradeTiers[storeIndex]];
+
+      if ((persistentScript.upgradeTiers[storeIndex] + 1) <= (upgradeCosts.Length)) {
+        cost = upgradeCosts[persistentScript.upgradeTiers[storeIndex]];
+        currentStoreIcon.sprite = storeIcons[persistentScript.upgradeTiers[storeIndex]];
+      }
     }
   }
 }

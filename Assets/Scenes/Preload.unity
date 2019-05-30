@@ -239,7 +239,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
-  money: 1000
+  money: 0
   highScore: 0
   multiplayer: 0
   multiplayerVictoryMessages:

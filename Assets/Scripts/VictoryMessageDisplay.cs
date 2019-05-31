@@ -15,7 +15,7 @@ public class VictoryMessageDisplay : MonoBehaviour {
   }
 
   void Update() {
-    //display the player's current high score
+    //display the victory message based on which player won
     victoryMessageDisplayText.text = persistentScript.currentVictoryMessage;
   }
 }

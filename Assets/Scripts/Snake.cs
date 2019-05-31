@@ -57,6 +57,7 @@ public class Snake : MonoBehaviour {
         sliderFill.GetComponent<Image>().color = sliderColor;
       }
 
+      //set the ghost mode timer to reflect the upgraded value on the persistent data
       ghostModeTimer = persistentScript.upgradeGhostTimer;
       ghostSlider.maxValue = ghostModeTimer;
     }

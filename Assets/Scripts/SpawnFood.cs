@@ -32,9 +32,12 @@ public class SpawnFood : MonoBehaviour {
     spawnStartDelay = persistentScript.upgradeSpawnStartDelay;
     spawnWait = persistentScript.upgradeSpawnWait;
 
+    //set the chance of spawning a super food to match the value from the persistent script
     superFoodSpawnChance = persistentScript.upgradeSuperFood;
+
     //start the infinitely repeating spawn function
     if (persistentScript.multiplayer) {
+      //if in multiplayer, use these values for the speed at which food spawns
       spawnStartDelay = 1.5f;
       spawnWait = 2f;
     }
@@ -45,6 +48,7 @@ public class SpawnFood : MonoBehaviour {
     borderOffset = persistentScript.upgradeBorderOffset;
     foodPrefab = persistentScript.currentFoodPrefab;
 
+    //if in multiplayer, set the size of the arena and the food prefab to be the proper size for multiplayer
     if (persistentScript.multiplayer) {
       borderScale.transform.localScale = new Vector2(1f, 1f);
       borderOffset = 1;
